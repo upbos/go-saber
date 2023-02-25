@@ -14,7 +14,7 @@ var zl zlog.Logger
 
 // Logger 系统日志配置
 type Logger struct {
-	Level   string       `yaml:"level"` // 日志级别
+	Level   string       `yaml:"level"` // // DEBUG/INFO/WARN/ERROR/FATAL
 	Console bool         `yaml:"console"`
 	File    *RollingFile `yaml:"file"` // 文件保存配置
 }
@@ -64,8 +64,9 @@ func Setup(logger *Logger) {
 	mw := io.MultiWriter(writers...)
 	ctx := zlog.New(mw).With().Timestamp()
 
-	zl = ctx.Logger()
+	l := ctx.Logger()
 	//l.With().Str("App", app).Str("Env", env).Int32("Shard", shard)
+	zl = l
 }
 
 func SubLogger(module string) zlog.Logger {
@@ -85,7 +86,7 @@ func Fatal(err error, message string) {
 }
 
 func Fatalf(err error, message string, args ...interface{}) {
-	zl.Fatal().Err(err).Msgf(message, args)
+	zl.Fatal().Err(err).Msgf(message, args...)
 }
 
 func Error(err error, message string) {
@@ -103,7 +104,6 @@ func Warn(message string) {
 func Warnf(message string, args ...interface{}) {
 	zl.Warn().Caller().Msgf(message, args...)
 }
-
 func Info(message string) {
 	zl.Info().Msg(message)
 }
@@ -117,5 +117,5 @@ func Debug(message string) {
 }
 
 func Debugf(message string, args ...interface{}) {
-	zl.Debug().Msgf(message, args)
+	zl.Debug().Msgf(message, args...)
 }
