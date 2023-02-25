@@ -1,3 +1,3 @@
-module github.com/www3com/go-base
+module github.com/upbos/go-base
 
 go 1.20
