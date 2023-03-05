@@ -7,7 +7,7 @@ import (
 type WrapError struct {
 	Code    int
 	Message string
-	data    interface{}
+	Data    interface{}
 }
 
 func (e *WrapError) Error() string {
@@ -23,7 +23,7 @@ func WithMessage(code int, message string) error {
 }
 
 func WithData(code int, message string, data interface{}) error {
-	return &WrapError{Code: code, Message: message, data: data}
+	return &WrapError{Code: code, Message: message, Data: data}
 }
 
 func Wrap(message string, err error) error {
