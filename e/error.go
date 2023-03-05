@@ -1,13 +1,13 @@
 package e
 
 import (
-	"fmt"
 	"github.com/pkg/errors"
 )
 
 type WrapError struct {
 	Code    int
 	Message string
+	data    interface{}
 }
 
 func (e *WrapError) Error() string {
@@ -22,8 +22,8 @@ func WithMessage(code int, message string) error {
 	return &WrapError{Code: code, Message: message}
 }
 
-func WithMessagef(code int, format string, args ...interface{}) error {
-	return &WrapError{Code: code, Message: fmt.Sprintf(format, args...)}
+func WithData(code int, message string, data interface{}) error {
+	return &WrapError{Code: code, Message: message, data: data}
 }
 
 func Wrap(message string, err error) error {
