@@ -27,7 +27,7 @@ type RollingFile struct {
 	Compress   bool   `yaml:"compress"`    // 是否压缩
 }
 
-func Setup(logger *Logger) {
+func Init(logger *Logger) {
 	level, err := zlog.ParseLevel(logger.Level)
 	if err != nil {
 		fmt.Printf("LogLevel parsing failed: %s", err)
