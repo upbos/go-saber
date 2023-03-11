@@ -30,7 +30,7 @@ func (w *dbWriter) Printf(format string, v ...interface{}) {
 	log.Debugf(format, v...)
 }
 
-func Setup(ds *DataSource) {
+func Init(ds *DataSource) {
 	dsn := fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s sslmode=disable",
 		ds.Host, ds.Port, ds.User, ds.Database, ds.Password)
 

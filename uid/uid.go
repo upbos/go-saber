@@ -14,7 +14,7 @@ const (
 
 var hashID *hashids.HashID
 
-func Setup(salt string) {
+func Init(salt string) {
 	hd := hashids.NewData()
 	hd.Salt = salt
 	hd.MinLength = minLength

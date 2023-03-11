@@ -12,7 +12,7 @@ type Server struct {
 	WriteTimeout time.Duration
 }
 
-func Setup(cfg Server, router http.Handler) {
+func Init(cfg Server, router http.Handler) {
 	server := &http.Server{
 		Addr:         cfg.Addr,
 		Handler:      router,

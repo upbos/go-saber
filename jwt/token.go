@@ -16,7 +16,7 @@ type Claims struct {
 
 var jwtSecret []byte
 
-func Setup(secretKey string) {
+func Init(secretKey string) {
 	jwtSecret = []byte(secretKey)
 }
 
