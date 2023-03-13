@@ -1,4 +1,4 @@
-module github.com/upbos/go-base
+module github.com/upbos/go-saber
 
 go 1.20
 
