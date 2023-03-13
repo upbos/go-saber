@@ -2,7 +2,7 @@ package db
 
 import (
 	"fmt"
-	"github.com/upbos/go-base/log"
+	"github.com/upbos/go-saber/log"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
