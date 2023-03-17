@@ -6,7 +6,7 @@ import (
 )
 
 func init() {
-	Setup("acc@2022")
+	Init("acc@2022")
 }
 
 func TestUid(t *testing.T) {
