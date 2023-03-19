@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	Setup("acc@2022")
+	Init("acc@2022")
 }
 
 func TestGenerateToken(t *testing.T) {

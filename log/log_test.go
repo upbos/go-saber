@@ -11,7 +11,7 @@ func init() {
 		File:    nil,
 	}
 
-	Setup(&logger)
+	Init(&logger)
 }
 
 func TestInfo(t *testing.T) {
